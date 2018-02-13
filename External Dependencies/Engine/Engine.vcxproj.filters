@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugMemory.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="MyAssert.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeLoader.h">
+      <Filter>Binary Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>Rendering\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Rendering\TextManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>Particle Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugShapes.h">
+      <Filter>Debug\DebugShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Debug\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiler.h">
+      <Filter>Debug\Profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="physicsParticle.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceGenerator.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleForceRegistry.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleDrag.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGravity.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSpring.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleAnchoredSpring.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleBungee.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleBouyancy.h">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleContact.h">
+      <Filter>Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleLink.h">
+      <Filter>Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleContactResolver.h">
+      <Filter>Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkRegistery.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="VerletParticle.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathing.h">
+      <Filter>Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="PathTree.h">
+      <Filter>Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection.h">
+      <Filter>Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="PathingPoint.h">
+      <Filter>Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="Scheduler.h">
+      <Filter>Scheduler</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>Scheduler</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionNode.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeExporter.h">
+      <Filter>Binary Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemFire.h">
+      <Filter>Particle Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemSmoke.h">
+      <Filter>Particle Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemFountain.h">
+      <Filter>Particle Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaState.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformInfo.h" />
+    <ClInclude Include="Texture.h">
+      <Filter>Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderable.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="UniformCallbackInfo.h">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClInclude>
+    <ClInclude Include="SubroutineUniformCallback.h">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClInclude>
+    <ClInclude Include="UniformBlockInfo.h">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutCallbackInfo.h">
+      <Filter>Shaders\Info/CallBacks\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Shaders\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLayoutManager.h">
+      <Filter>Shaders\Managers\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="UniformBlockManager.h">
+      <Filter>Shaders\Managers\Uniforms</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderUniformManager.h">
+      <Filter>Shaders\Managers\Uniforms</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryInfo.h">
+      <Filter>Rendering\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryManager.h">
+      <Filter>Rendering\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMapTexture.h">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthTexture.h">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="FileTexture.h">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidColorTexture.h">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearNoise.h">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="CubicNoise.h">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="LatticeNoise.h">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="NoiseTexture.h">
+      <Filter>Textures\TextureTypes\Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Physics\Spatial Partitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportHeader.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="Math Defines.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTypeDefs.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper Functions.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="FastDelegateBind.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="FastDelegate.h">
+      <Filter>TypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Rendering\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Physics\Ray</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>Rendering\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingManager.h" />
+    <ClInclude Include="AxisAlignedBoundingBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeLoader.cpp">
+      <Filter>Binary Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoTimer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>Rendering\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>Rendering\TextManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>Particle Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugShapes.cpp">
+      <Filter>Debug\DebugShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Debug\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiler.cpp">
+      <Filter>Debug\Profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemsFire.cpp">
+      <Filter>Particle Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemsFountain.cpp">
+      <Filter>Particle Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemSmoke.cpp">
+      <Filter>Particle Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="physicsParticle.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleForceRegistry.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleDrag.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGravity.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleAnchoredSpring.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSpring.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleBouyancy.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleBungee.cpp">
+      <Filter>Physics\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleContact.cpp">
+      <Filter>Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleContactResolver.cpp">
+      <Filter>Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleLink.cpp">
+      <Filter>Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkRegistery.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="VerletParticle.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathing.cpp">
+      <Filter>Pathing</Filter>
+    </ClCompile>
+    <ClCompile Include="PathTree.cpp">
+      <Filter>Pathing</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection.cpp">
+      <Filter>Pathing</Filter>
+    </ClCompile>
+    <ClCompile Include="PathingPoint.cpp">
+      <Filter>Pathing</Filter>
+    </ClCompile>
+    <ClCompile Include="Scheduler.cpp">
+      <Filter>Scheduler</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionNode.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaState.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeExporter.cpp">
+      <Filter>Binary Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformInfo.cpp" />
+    <ClCompile Include="Texture.cpp">
+      <Filter>Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderable.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="SubroutineUniformCallback.cpp">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClCompile>
+    <ClCompile Include="UniformBlockInfo.cpp">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClCompile>
+    <ClCompile Include="UniformCallbackInfo.cpp">
+      <Filter>Shaders\Info/CallBacks\Uniforms</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutCallbackInfo.cpp">
+      <Filter>Shaders\Info/CallBacks\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Shaders\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLayoutManager.cpp">
+      <Filter>Shaders\Managers\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderUniformManager.cpp">
+      <Filter>Shaders\Managers\Uniforms</Filter>
+    </ClCompile>
+    <ClCompile Include="UniformBlockManager.cpp">
+      <Filter>Shaders\Managers\Uniforms</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryInfo.cpp">
+      <Filter>Rendering\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryManager.cpp">
+      <Filter>Rendering\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeMapTexture.cpp">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthTexture.cpp">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTexture.cpp">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidColorTexture.cpp">
+      <Filter>Textures\TextureTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="CubicNoise.cpp">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="LatticeNoise.cpp">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearNoise.cpp">
+      <Filter>Textures\TextureTypes\Noise\NoiseFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="NoiseTexture.cpp">
+      <Filter>Textures\TextureTypes\Noise</Filter>
+    </ClCompile>
+    <ClCompile Include="HelperFunctions.cpp">
+      <Filter>TypeDefs</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Physics\Ray</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>Rendering\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="LightingManager.cpp" />
+    <ClCompile Include="AxisAlignedBoundingBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{47673a85-880d-485d-89e4-6a2dc94bf53a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{f9850844-5904-4a85-92d8-b37f11d53875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{7ed34b0c-223f-4c9a-8713-d88788a57356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Binary Loader">
+      <UniqueIdentifier>{1fdb54c1-8a20-4623-b37b-89999df30804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{00936a9d-cc17-41f8-bd7a-667089382789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle Systems">
+      <UniqueIdentifier>{afd1c90a-e87b-4b8b-9214-118b50a4402b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug\DebugShapes">
+      <UniqueIdentifier>{20d351be-dde1-42d3-bdec-e2048a16d2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug\Logger">
+      <UniqueIdentifier>{9c74b670-5dd0-4773-8718-85423ef2d68e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug\Profiler">
+      <UniqueIdentifier>{5c3897ea-3167-4913-8453-0c673de2482a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{d0cbe28c-206e-4137-8a22-6ee6d05aa2a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics\ForceGenerators">
+      <UniqueIdentifier>{bc0be5a9-11bc-4bb5-8b75-9a50bc8e488f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics\Collision">
+      <UniqueIdentifier>{ef2d109e-4046-4e64-a1c5-a4e75fbc7d01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pathing">
+      <UniqueIdentifier>{39972ed1-d318-4010-a4f8-89f35efaa78d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scheduler">
+      <UniqueIdentifier>{804cadcf-d29f-4f5f-b98e-cd3bc29bbdf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{94b35043-943d-4729-a312-30b66b6d5443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{5ae79f1a-ea88-4cf9-91b4-1771d9252916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{89d24d72-36a4-4527-9aa4-6e2483ca6f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures">
+      <UniqueIdentifier>{45eab5b5-011d-4972-b60f-cd27f52eef52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\ShaderFiles">
+      <UniqueIdentifier>{483838c4-21de-40d4-afa3-46dbe9df81d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\TextManager">
+      <UniqueIdentifier>{da3a2615-b0e4-404f-a553-51fdff3d846c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Info/CallBacks">
+      <UniqueIdentifier>{0d808e77-2abd-4b99-abcc-47fa805e571c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Info/CallBacks\Uniforms">
+      <UniqueIdentifier>{c6f10d98-1f19-42be-a82e-fb93fc094c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Info/CallBacks\Layouts">
+      <UniqueIdentifier>{b83a27fa-47c4-4016-b1a1-bf12fb085d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Managers">
+      <UniqueIdentifier>{2ab30e35-b2da-42d6-a7f5-87dcf7bc228a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Managers\Layout">
+      <UniqueIdentifier>{ea1c76a7-bdc2-4fe5-bbca-9bfcd53deb61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Managers\Uniforms">
+      <UniqueIdentifier>{51076f4a-d785-490c-9b85-bdfae5dbc89e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\Geometry">
+      <UniqueIdentifier>{8f08676a-4e10-49a6-bfa4-9f50f9913002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\Rendering">
+      <UniqueIdentifier>{413182d0-9d9e-4bf2-88ca-9e7a4839f9ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures\TextureTypes">
+      <UniqueIdentifier>{25830a73-ecc2-4073-824e-674648b5f742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures\TextureTypes\Noise">
+      <UniqueIdentifier>{1b0bd9a4-69db-4c63-afbe-a3aaf21da3e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures\TextureTypes\Noise\NoiseFunctions">
+      <UniqueIdentifier>{2578ff2e-6aa1-43ee-b61a-1babeca8aae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics\Spatial Partitioning">
+      <UniqueIdentifier>{4fb2a7fe-399a-41e9-9a11-9e3a47c651de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypeDefs">
+      <UniqueIdentifier>{e4e78a50-152b-4467-83f2-c034e5006e1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\Lighting">
+      <UniqueIdentifier>{0dec0210-5e11-4628-b74d-f7d151746ddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics\Ray">
+      <UniqueIdentifier>{73873cdb-e206-4c10-acea-1b7f304497e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.lua">
+      <Filter>Lua</Filter>
+    </None>
+    <None Include="Shaders\DefaultFragmentShader.sh">
+      <Filter>Shaders\ShaderFiles</Filter>
+    </None>
+    <None Include="Shaders\DefaultVertexShader.sh">
+      <Filter>Shaders\ShaderFiles</Filter>
+    </None>
+  </ItemGroup>
+</Project>

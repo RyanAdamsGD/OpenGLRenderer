@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{25E3A2C3-EB10-45D4-B7C2-CE7C5A34129C}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\glm;$(SolutionDir)..\..\External Dependencies\NeumontTools\include;$(SolutionDir)..\..\External Dependencies\glew\include;$(SolutionDir)..\..\External Dependencies\lua\include;$(SolutionDir)..\..\External Dependencies\Qt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);ENGINE_EXPORTS;</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4201</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;glew32d.lib;glew32sd.lib;glew32s.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;NeumontTools.lib;OpenGL32.lib;lua51.lib;lua5.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(Solution)..\Engine;$(SolutionDir)..\..\External Dependencies\lua\lib;$(SolutionDir)..\..\External Dependencies\glew\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\Qt\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\Qt\include;$(SolutionDir)..\..\External Dependencies\lua\include;$(SolutionDir)..\..\External Dependencies\glew\include;$(SolutionDir)..\..\External Dependencies\NeumontTools\include;$(SolutionDir)..\..\External Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);ENGINE_EXPORTS</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\External Dependencies\Qt\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\glew\lib;$(SolutionDir)..\..\External Dependencies\lua\lib;$(Solution)..\Engine;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AutoTimer.h" />
+    <ClInclude Include="AxisAlignedBoundingBox.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Connection.h" />
+    <ClInclude Include="CubeMapTexture.h" />
+    <ClInclude Include="CubicNoise.h" />
+    <ClInclude Include="DebugMemory.h" />
+    <ClInclude Include="DebugShapes.h" />
+    <ClInclude Include="DecisionNode.h" />
+    <ClInclude Include="DepthTexture.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="ExportHeader.h" />
+    <ClInclude Include="FastDelegate.h" />
+    <ClInclude Include="FastDelegateBind.h" />
+    <ClInclude Include="FileTexture.h" />
+    <ClInclude Include="ForceGenerator.h" />
+    <ClInclude Include="GeometryInfo.h" />
+    <ClInclude Include="GeometryManager.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Helper Functions.h" />
+    <ClInclude Include="LatticeNoise.h" />
+    <ClInclude Include="LayoutCallbackInfo.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LightingManager.h" />
+    <ClInclude Include="LinearNoise.h" />
+    <ClInclude Include="LinkRegistery.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="LuaState.h" />
+    <ClInclude Include="Math Defines.h" />
+    <ClInclude Include="MyTypeDefs.h" />
+    <ClInclude Include="NoiseTexture.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="ParticleAnchoredSpring.h" />
+    <ClInclude Include="ParticleBouyancy.h" />
+    <ClInclude Include="ParticleBungee.h" />
+    <ClInclude Include="ParticleContact.h" />
+    <ClInclude Include="ParticleContactResolver.h" />
+    <ClInclude Include="ParticleDrag.h" />
+    <ClInclude Include="ParticleForceRegistry.h" />
+    <ClInclude Include="ParticleGravity.h" />
+    <ClInclude Include="ParticleLink.h" />
+    <ClInclude Include="ParticleSpring.h" />
+    <ClInclude Include="ParticleSystemFire.h" />
+    <ClInclude Include="ParticleSystemFountain.h" />
+    <ClInclude Include="ParticleSystemSmoke.h" />
+    <ClInclude Include="Pathing.h" />
+    <ClInclude Include="PathingPoint.h" />
+    <ClInclude Include="PathTree.h" />
+    <ClInclude Include="physicsParticle.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="Renderable.h" />
+    <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="MyAssert.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="Profiler.h" />
+    <ClInclude Include="Scheduler.h" />
+    <ClInclude Include="ShaderLayoutManager.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="ShaderUniformManager.h" />
+    <ClInclude Include="ShapeExporter.h" />
+    <ClInclude Include="ShapeLoader.h" />
+    <ClInclude Include="SolidColorTexture.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="SubroutineUniformCallback.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TextRenderer.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TransformInfo.h" />
+    <ClInclude Include="UniformBlockInfo.h" />
+    <ClInclude Include="UniformBlockManager.h" />
+    <ClInclude Include="UniformCallbackInfo.h" />
+    <ClInclude Include="VerletParticle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoTimer.cpp" />
+    <ClCompile Include="AxisAlignedBoundingBox.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="CubeMapTexture.cpp" />
+    <ClCompile Include="CubicNoise.cpp" />
+    <ClCompile Include="DebugShapes.cpp" />
+    <ClCompile Include="DecisionNode.cpp" />
+    <ClCompile Include="DepthTexture.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="FileTexture.cpp" />
+    <ClCompile Include="GeometryInfo.cpp" />
+    <ClCompile Include="GeometryManager.cpp" />
+    <ClCompile Include="HelperFunctions.cpp" />
+    <ClCompile Include="LatticeNoise.cpp" />
+    <ClCompile Include="LayoutCallbackInfo.cpp" />
+    <ClCompile Include="LightingManager.cpp" />
+    <ClCompile Include="LinearNoise.cpp" />
+    <ClCompile Include="LinkRegistery.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="LuaState.cpp" />
+    <ClCompile Include="NoiseTexture.cpp" />
+    <ClCompile Include="ParticleAnchoredSpring.cpp" />
+    <ClCompile Include="ParticleBouyancy.cpp" />
+    <ClCompile Include="ParticleBungee.cpp" />
+    <ClCompile Include="ParticleContact.cpp" />
+    <ClCompile Include="ParticleContactResolver.cpp" />
+    <ClCompile Include="ParticleDrag.cpp" />
+    <ClCompile Include="ParticleForceRegistry.cpp" />
+    <ClCompile Include="ParticleGravity.cpp" />
+    <ClCompile Include="ParticleLink.cpp" />
+    <ClCompile Include="ParticleSpring.cpp" />
+    <ClCompile Include="ParticleSystemsFire.cpp" />
+    <ClCompile Include="ParticleSystemsFountain.cpp" />
+    <ClCompile Include="ParticleSystemSmoke.cpp" />
+    <ClCompile Include="Pathing.cpp" />
+    <ClCompile Include="PathingPoint.cpp" />
+    <ClCompile Include="PathTree.cpp" />
+    <ClCompile Include="physicsParticle.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="Renderable.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="Profiler.cpp" />
+    <ClCompile Include="Scheduler.cpp" />
+    <ClCompile Include="ShaderLayoutManager.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ShaderUniformManager.cpp" />
+    <ClCompile Include="ShapeExporter.cpp" />
+    <ClCompile Include="ShapeLoader.cpp" />
+    <ClCompile Include="SolidColorTexture.cpp" />
+    <ClCompile Include="SubroutineUniformCallback.cpp" />
+    <ClCompile Include="TextRenderer.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TransformInfo.cpp" />
+    <ClCompile Include="UniformBlockInfo.cpp" />
+    <ClCompile Include="UniformBlockManager.cpp" />
+    <ClCompile Include="UniformCallbackInfo.cpp" />
+    <ClCompile Include="VerletParticle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.lua" />
+    <None Include="Shaders\DefaultFragmentShader.sh" />
+    <None Include="Shaders\DefaultVertexShader.sh" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
