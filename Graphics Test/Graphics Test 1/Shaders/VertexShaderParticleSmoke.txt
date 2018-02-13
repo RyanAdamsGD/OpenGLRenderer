@@ -1,0 +1,53 @@
+#version 400
+// Initial velocity and start time
+subroutine void RenderPassType();
+subroutine uniform RenderPassType RenderPass;
+layout (location = 0) in vec3 VertexInitVel;
+layout (location = 1) in float VertexStartTime;
+out float StartTime; //Feedback for startTime
+out float Transp; // Transparency of the particle
+uniform float Time; // Animation time
+uniform float MinParticleSize;
+uniform float MaxParticleSize;
+uniform vec3 Gravity; // world coords
+uniform float ParticleLifetime; // Max particle lifetime
+uniform mat4 MVP;
+
+subroutine (RenderPassType) 
+void update()
+{
+	StartTime = VertexStartTime;
+
+	float age = Time - VertexStartTime;	
+	if(age>ParticleLifetime)
+	{
+		StartTime = Time;
+	}
+}
+
+subroutine (RenderPassType)
+void render()
+{
+	// Assume the initial position is (0,0,0).
+	vec3 pos = vec3(0.0);
+	Transp = 0.0;
+	// Particle doesn't exist until the start time
+	if( Time >VertexStartTime ) 
+	{
+		float age = Time - VertexStartTime;
+		if( age <ParticleLifetime ) 
+		{
+			pos = VertexInitVel * age + Gravity * age * age;
+			float agePct = age / ParticleLifetime;
+			Transp = 1.0 - agePct;
+			gl_PointSize = mix(MinParticleSize,MaxParticleSize,agePct);
+		}
+		
+	}
+	gl_Position = MVP * vec4(pos, 1.0);
+}
+
+void main()
+{
+	RenderPass();
+}

@@ -1,0 +1,21 @@
+#version 400
+
+in vec2 vertexUV;
+out vec4 FragColor;
+
+uniform vec4 letter;
+uniform sampler2D textTexture;
+
+void main()
+{
+	vec2 textUV = vec2(((vertexUV.x * letter.z + letter.x)/512), ((vertexUV.y * letter.w +(512 - letter.w - letter.y))/512));
+	vec4 color = texture(textTexture,textUV);
+	if(color.w < .15)
+	{
+		discard;
+	}
+	else
+	{
+		FragColor = color;
+	}
+}

@@ -1,0 +1,32 @@
+#version 400
+
+layout (location=0) in vec3 position;
+layout (location=1) in vec4 color;
+layout (location=2) in vec3 normal;
+layout (location=3) in vec2 UV;
+out vec2 vertexUV;
+out vec4 vertexColor;
+uniform mat4 mvp;
+uniform vec3 ambientLight;
+uniform vec3 lightPosition;
+
+void main()
+{
+	//Ambient
+	vec4 materialAmbientColor = vec4(1,1,1,1);
+
+	//Diffuse
+	vec3 lightVector = normalize(lightPosition - position);
+	float diffuseBrightness = dot(normal, lightVector);
+	if(diffuseBrightness < 0.0f)
+	{
+		diffuseBrightness = 0.0f;
+	}
+	vec4 diffuseLight = vec4(diffuseBrightness,diffuseBrightness,diffuseBrightness,1);
+
+
+	vertexUV = UV;
+	vertexColor = color * vec4(ambientLight,1) + diffuseLight;
+	//vertexColor = materialAmbientColor * vec4(ambientLight,1);
+	gl_Position = vec4(transform * vec4(position,1));
+}

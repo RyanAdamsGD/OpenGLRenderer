@@ -1,0 +1,42 @@
+#version 400
+
+in vec3 worldSpaceNormal;
+in vec3 vertexWorldPosition; 
+out vec4 FragColor;
+
+uniform float power;
+uniform vec3 ambientLight;
+uniform vec3 lightPosition;
+uniform vec3 cameraPosition;
+uniform vec4 diffuseLight;
+uniform vec3 ambientColor;
+uniform vec4 diffuseColor;
+uniform vec4 specularColor;
+
+void main()
+{ 
+
+	//Ambient
+
+
+	//Diffuse
+	//dot of normal and light
+	vec3 lightVector = normalize(lightPosition - vertexWorldPosition);
+	float diffuseBrightness = dot(normalize(worldSpaceNormal), lightVector);
+	diffuseBrightness = clamp(diffuseBrightness,0,1);
+	vec4 dLight = vec4(diffuseBrightness * diffuseLight.x,diffuseBrightness * diffuseLight.y,diffuseBrightness * diffuseLight.z,diffuseColor.w);
+
+
+	//Specular
+	//dot product of the reflection of the light around the normal and the eye position
+	vec3 lightReflectedVector = reflect(-lightVector,normalize(worldSpaceNormal));
+	vec3 cameraVector = normalize(cameraPosition-vertexWorldPosition);
+	float specularBrightness = dot(cameraVector,lightReflectedVector);
+	specularBrightness = clamp(specularBrightness,0,1);
+	specularBrightness = pow(specularBrightness,power);
+
+	FragColor = vec4(ambientColor,1) * vec4(ambientLight,1) + (dLight * diffuseColor) + (specularBrightness * specularColor);
+	
+}
+
+

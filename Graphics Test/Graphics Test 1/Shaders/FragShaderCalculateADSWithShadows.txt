@@ -1,0 +1,56 @@
+#version 400
+
+in vec3 worldSpaceNormal;
+in vec3 vertexWorldPosition; 
+in vec2 vertexUV;
+in vec3 shadowCoord;
+in mat3 tangentToWorld;
+out vec4 FragColor;
+
+uniform float power;
+uniform vec3 ambientLight;
+uniform vec3 lightPosition;
+uniform vec3 cameraPosition;
+uniform vec4 diffuseLight;
+uniform vec3 ambientColor;
+uniform vec4 diffuseColor;
+uniform vec4 specularColor;
+uniform sampler2D shadowTex;
+uniform sampler2D baseTex;
+
+void main()
+{ 
+	vec3 mapNormal = normalize(texture2D( baseTex, vertexUV ).rgb*2.0 - 1.0);
+	mapNormal = normalize(tangentToWorld * mapNormal);
+
+	//Diffuse
+	//dot of normal and light
+	vec3 lightVector = normalize(lightPosition - vertexWorldPosition);
+	float diffuseBrightness = dot(mapNormal, lightVector);
+	diffuseBrightness = clamp(diffuseBrightness,0,1);
+	vec4 dLight = vec4(diffuseBrightness * diffuseLight.x,diffuseBrightness * diffuseLight.y,diffuseBrightness * diffuseLight.z,diffuseColor.w);
+
+
+	//Specular
+	//dot product of the reflection of the light around the normal and the eye position
+	vec3 lightReflectedVector = reflect(-lightVector,mapNormal);
+	vec3 cameraVector = normalize(cameraPosition-vertexWorldPosition);
+	float specularBrightness = dot(cameraVector,lightReflectedVector);
+	specularBrightness = clamp(specularBrightness,0,1);
+	specularBrightness = pow(specularBrightness,power);
+
+	//test if in shadow
+	float bias = 0.005;
+	if ( texture( shadowTex, shadowCoord.xy ).z  <  shadowCoord.z - bias)
+	{
+		FragColor = vec4(ambientColor,1) * vec4(ambientLight,1);
+	}
+	else
+	{
+		FragColor = vec4(ambientColor,1) * vec4(ambientLight,1) + (dLight * diffuseColor) + (specularBrightness * specularColor);
+	}
+
+	
+}
+
+

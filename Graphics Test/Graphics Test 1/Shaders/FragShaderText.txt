@@ -1,0 +1,11 @@
+#version 400
+
+in vec2 vertexUV;
+out vec4 FragColor;
+
+uniform sampler2D baseTex;
+
+void main()
+{
+	FragColor = texture(baseTex,vertexUV);
+}

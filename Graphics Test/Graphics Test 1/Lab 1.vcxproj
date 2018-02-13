@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3D01D2F-248D-4E85-97AC-B4019AAB7DFA}</ProjectGuid>
+    <RootNamespace>Lab1</RootNamespace>
+    <ProjectName>Graphics Test 1</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\glm;$(SolutionDir)..\..\External Dependencies\Engine;$(SolutionDir)..\..\External Dependencies\NeumontTools\include;$(SolutionDir)..\..\External Dependencies\Qt\include;$(SolutionDir)..\..\External Dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\External Dependencies\glew\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\Qt\lib;$(SolutionDir)..\..\External Dependencies\Engine\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Engine.lib;glew32d.lib;glew32s.lib;glew32.lib;glew32sd.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;NeumontTools.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>erase "$(OutDir)Engine.dll" 
+copy "$(SolutionDir)..\..\External Dependencies\Engine\$(Configuration)\Engine.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>CALL "$(ProjectDir)"moc_run.bat "$(ProjectDir)" "$(ProjectDir)moc.exe"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\glew\include;$(SolutionDir)..\..\External Dependencies\Qt\include;$(SolutionDir)..\..\External Dependencies\NeumontTools\include;$(SolutionDir)..\..\External Dependencies\Engine;$(SolutionDir)..\..\External Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Engine.lib;glew32d.lib;glew32s.lib;glew32.lib;glew32sd.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;NeumontTools.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\External Dependencies\Engine\Debug;$(SolutionDir)..\..\External Dependencies\Qt\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CollisionResolution.cpp" />
+    <ClCompile Include="Flag.cpp" />
+    <ClCompile Include="FloatElement.cpp" />
+    <ClCompile Include="FloatElement_moc.cpp" />
+    <ClCompile Include="Hair.cpp" />
+    <ClCompile Include="ICantSwim.cpp" />
+    <ClCompile Include="IParticleDrawer.cpp" />
+    <ClCompile Include="LetsBounce.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainGLWindow.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="MainWindow_moc.cpp" />
+    <ClCompile Include="PropertyElement_moc.cpp" />
+    <ClCompile Include="PropertyWindow.cpp" />
+    <ClCompile Include="PropertyWindow_moc.cpp" />
+    <ClCompile Include="QTDebugMenu.cpp" />
+    <ClCompile Include="QTDebugMenu_moc.cpp" />
+    <ClCompile Include="QtPaintWindow.cpp" />
+    <ClCompile Include="RayTraceDemo.cpp" />
+    <ClCompile Include="RestingParticles.cpp" />
+    <ClCompile Include="TheRoofTheRoofIsOnFire.cpp" />
+    <ClCompile Include="Water.cpp" />
+    <ClCompile Include="WhatADrag.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CollisionResolution.h" />
+    <ClInclude Include="Flag.h" />
+    <ClInclude Include="FloatElement.h" />
+    <ClInclude Include="Hair.h" />
+    <ClInclude Include="ICantSwim.h" />
+    <ClInclude Include="IParticleDrawer.h" />
+    <ClInclude Include="IUpdatable.h" />
+    <ClInclude Include="LetsBounce.h" />
+    <ClInclude Include="MainGLWindow.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="PropertyElement.h" />
+    <ClInclude Include="PropertyWindow.h" />
+    <ClInclude Include="QTDebugMenu.h" />
+    <ClInclude Include="QtPaintWindow.h" />
+    <ClInclude Include="RayTraceDemo.h" />
+    <ClInclude Include="RestingParticles.h" />
+    <ClInclude Include="TheRoofTheRoofIsOnFire.h" />
+    <ClInclude Include="Water.h" />
+    <ClInclude Include="WhatADrag.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\DebugShapeVertexShader.txt" />
+    <None Include="Shaders\FragmentPassThroughShader.txt" />
+    <None Include="Shaders\fragParticleShader.txt" />
+    <None Include="Shaders\FragParticleShaderSmoke.txt" />
+    <None Include="Shaders\FragShaderCalculateADS.txt" />
+    <None Include="Shaders\FragShaderCalculateADSNormalTexture.txt" />
+    <None Include="Shaders\FragShaderCalculateADSReflective.txt" />
+    <None Include="Shaders\FragShaderCalculateADSTexture.txt" />
+    <None Include="Shaders\FragShaderCalculateADSWithShadows.txt" />
+    <None Include="Shaders\FragShaderColorInVert.txt" />
+    <None Include="Shaders\FragShaderParticleSystem.txt" />
+    <None Include="Shaders\FragShaderTempText.txt" />
+    <None Include="Shaders\FragShaderText.txt" />
+    <None Include="Shaders\FragShaderTextTemp.txt" />
+    <None Include="Shaders\MyFragmentShader.txt" />
+    <None Include="Shaders\MyVertexShader.txt" />
+    <None Include="Shaders\MyVertexShaderText.txt" />
+    <None Include="Shaders\vertexParticleShader.txt" />
+    <None Include="Shaders\VertexPassThroughShader.txt" />
+    <None Include="Shaders\VertexShaderColorInFrag.txt" />
+    <None Include="Shaders\VertexShaderParticleSmoke.txt" />
+    <None Include="Shaders\VertexShaderParticleSystem.txt" />
+    <None Include="Shaders\VertexShaderSendToFrag.txt" />
+    <None Include="Shaders\VertexShaderSendToFragWithShadows.txt" />
+    <None Include="Shaders\VertexShaderSolidColor.txt" />
+    <None Include="Textures\NormalMap.png" />
+    <None Include="Textures\normalMap2.png" />
+    <None Include="Textures\particleTexture.png" />
+    <None Include="Textures\texture1.bmp" />
+    <None Include="Textures\text_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,22 @@
+#version 400
+in float Transp;
+uniform sampler2D ParticleTex;
+layout ( location = 0 ) out vec4 FragColor;
+
+void main()
+{
+	//FragColor = texture(ParticleTex, gl_PointCoord);
+	//FragColor.w *= Transp;
+	if(Transp > 0.45f && Transp < 0.6f)
+	{
+		FragColor = vec4(1,0,0,Transp/5);
+	}
+	else if(Transp >0.3f && Transp <0.45f)
+	{
+		FragColor = vec4(.2f * Transp,1.0f-Transp,0.25f,Transp/1.5f);
+	}
+	else
+	{
+		FragColor = vec4(0.0f,1.3-Transp,1.0f,Transp);
+	}
+}

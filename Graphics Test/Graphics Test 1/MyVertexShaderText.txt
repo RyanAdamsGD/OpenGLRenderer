@@ -1,0 +1,12 @@
+#version 400
+
+layout (location=0) in vec3 position;
+layout (location=1) in vec2 UV;
+out vec2 vertexUV;
+uniform mat4 mvp;
+
+void main()
+{
+	vertexUV = UV;
+	gl_Position = vec4(mvp * vec4(position,1));
+}

@@ -1,0 +1,17 @@
+#version 400
+
+layout (location=0) in vec3 position;
+layout (location=1) in vec4 color;
+layout (location=2) in vec3 normal;
+layout (location=3) in vec2 UV;
+out vec2 vertexUV;
+out vec4 vertexColor;
+uniform mat4 mvp;
+uniform vec4 ambientColor;
+
+void main()
+{
+	vertexUV = UV;
+	vertexColor = ambientColor;
+	gl_Position = vec4(mvp * vec4(position[0],position[1],position[2],1));
+}

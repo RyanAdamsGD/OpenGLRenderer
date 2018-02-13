@@ -1,0 +1,23 @@
+#version 400
+
+in vec2 vertexUV;
+out vec4 FragColor;
+
+uniform vec4 letter;
+uniform sampler2D baseTex;
+
+void main()
+{
+	int temp=0;
+	if(letter.w >1 || letter.x >1 || letter.y >1 || letter.z >1)
+	{
+		temp = 100;
+	}
+	//change the 256 to image width/hieght
+	vec2 textUV = vec2(((vertexUV.x * letter.z + letter.x)/256), ((vertexUV.y * letter.w +(256 - letter.w - letter.y))/256));
+	//vec2 textUV = vec2((vertexUV.x *32 + temp)/256, (vertexUV.y * 32 + 224 - 99)/256);
+
+	FragColor = texture(baseTex,textUV);
+	//FragColor = vec4(1.0f,1.0f,1.0f,1.f);
+
+}

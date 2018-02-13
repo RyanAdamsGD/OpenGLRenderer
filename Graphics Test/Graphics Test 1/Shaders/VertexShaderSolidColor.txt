@@ -1,0 +1,53 @@
+#version 400
+
+layout (location=0) in vec3 position;
+layout (location=1) in vec4 color;
+layout (location=2) in vec3 normal;
+layout (location=3) in vec2 UV;
+out vec2 vertexUV;
+out vec4 vertexColor;
+
+uniform float power;
+uniform vec3 ambientLight;
+uniform vec3 lightPosition;
+uniform vec3 cameraPosition;
+uniform vec4 diffuseLight;
+uniform vec4 ambientColor;
+uniform vec4 diffuseColor;
+uniform vec4 specularColor;
+uniform mat3 modelTransformMat3;
+uniform mat4 mvp;
+uniform mat4 modelTransformMat4;
+
+
+void main()
+{
+	//Ambient
+
+
+	//Diffuse
+	//dot of normal and light
+	vec3 vertexWorldPosition = vec3(modelTransformMat4 * vec4(position,1));
+	vec3 lightVector = normalize(lightPosition - vertexWorldPosition);
+	vec3 worldSpaceNormal = modelTransformMat3 * normal;
+	float diffuseBrightness = dot(normalize(worldSpaceNormal), lightVector);
+	diffuseBrightness = clamp(diffuseBrightness,0,1);
+	vec4 diffuseLight = vec4(diffuseBrightness * diffuseLight.x,diffuseBrightness * diffuseLight.y,diffuseBrightness * diffuseLight.z,diffuseColor.w);
+
+
+	//Specular
+	//dot product of the reflection of the light around the normal and the eye position
+	vec3 lightReflectedVector = reflect(-lightVector,worldSpaceNormal);
+	vec3 cameraVector = normalize(cameraPosition-vertexWorldPosition);
+	float specularBrightness = dot(cameraVector,lightReflectedVector);
+	specularBrightness = clamp(specularBrightness,0,1);
+	specularBrightness = pow(specularBrightness,power);
+
+
+
+	vertexUV = UV;
+	//vertexColor = vec4(0.5f,0.5f,0.5f,0.5f);
+	vertexColor = ambientColor * vec4(ambientLight,1) + (diffuseLight * diffuseColor) + (specularBrightness * specularColor);
+	
+	gl_Position = vec4(mvp * vec4(position,1));
+}

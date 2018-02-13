@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="QTDebugMenu.cpp" />
+    <ClCompile Include="WhatADrag.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGLWindow.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="QtPaintWindow.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="LetsBounce.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ICantSwim.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="IParticleDrawer.cpp">
+      <Filter>Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="TheRoofTheRoofIsOnFire.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionResolution.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="Flag.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="RestingParticles.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="Hair.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="RayTraceDemo.cpp">
+      <Filter>Programs</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow_moc.cpp" />
+    <ClCompile Include="QTDebugMenu_moc.cpp" />
+    <ClCompile Include="PropertyWindow.cpp">
+      <Filter>Properties Window</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyWindow_moc.cpp">
+      <Filter>Properties Window</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatElement.cpp">
+      <Filter>Properties Window</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatElement_moc.cpp">
+      <Filter>Properties Window</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyElement_moc.cpp">
+      <Filter>Properties Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="QTDebugMenu.h" />
+    <ClInclude Include="WhatADrag.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="IParticleDrawer.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdatable.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGLWindow.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="QtPaintWindow.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="LetsBounce.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ICantSwim.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="TheRoofTheRoofIsOnFire.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionResolution.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="RestingParticles.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="Hair.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="RayTraceDemo.h">
+      <Filter>Programs</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyWindow.h">
+      <Filter>Properties Window</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyElement.h">
+      <Filter>Properties Window</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatElement.h">
+      <Filter>Properties Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Programs">
+      <UniqueIdentifier>{8deb3197-d30e-4003-8c89-4b4380ff8514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{ce597a39-a675-4dbe-8d38-ba01e91ccc0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{ae1fe05b-1ab1-4c57-95f0-8db51581500e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{ec14b5f4-0090-4acc-a534-e221cfb1219a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures">
+      <UniqueIdentifier>{4cbec284-080d-41ad-a2ba-825707f17e9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Properties Window">
+      <UniqueIdentifier>{efeb44ab-ca59-4598-8da9-e8c119d5279b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\DebugShapeVertexShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\fragParticleShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragParticleShaderSmoke.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderCalculateADS.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderCalculateADSTexture.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderColorInVert.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderParticleSystem.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderTempText.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderText.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderTextTemp.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\MyFragmentShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\MyVertexShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\MyVertexShaderText.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\vertexParticleShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderColorInFrag.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderParticleSmoke.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderParticleSystem.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderSendToFrag.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderSolidColor.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Textures\particleTexture.png">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="Textures\text_0.png">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="Textures\texture1.bmp">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="Shaders\FragmentPassThroughShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexPassThroughShader.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShaderSendToFragWithShadows.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderCalculateADSWithShadows.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Textures\normalMap2.png">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="Textures\NormalMap.png">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="Shaders\FragShaderCalculateADSNormalTexture.txt">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\FragShaderCalculateADSReflective.txt">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
